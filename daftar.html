@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Beasiswa</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS untuk styling footer */
+        footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #f8f9fa;
+          text-align: center;
+          padding: 10px 0;
+        }
+    
+        /* CSS untuk memberikan padding-bottom pada body agar konten tidak tertutup footer */
+        body {
+          padding-bottom: 60px; /* Sesuaikan dengan tinggi footer Anda */
+        }
+      </style>
+      <script src="fungsi.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Pilihan Beasiswa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="daftar.html">Daftar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="hasil.php">Hasil</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Konten -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <!-- Form Daftar Beasiswa -->
+      <div class="col-lg-6 offset-lg-3" id="daftar">
+        <h2 class="text-center mb-4">DAFTAR BEASISWA</h2>
+        <hr>
+        <form method="POST" action="daftar_tambah.php">
+          <div class="form-group row ">
+            <label for="nama" class="col-sm-3 col-form-label">Nama</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="nama" name="nama" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="jeniskelamin" class="col-sm-3 col-form-label text-nowrap">jeniskelamin</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="jeniskelamin" name="jeniskelamin">
+                <option value="P">P</option>
+                <option value="L">L</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row ">
+            <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="alamat" name="alamat" >
+            </div>
+          </div> 
+        
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="email" name="email" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label text-nowrap">Nomor HP</label>
+            <div class="col-sm-9">
+              <input type="tel" class="form-control" id="no-hp" name="no-hp" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="semester" class="col-sm-3 col-form-label text-nowrap">Semester Saat Ini</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="semester" name="semester">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">IPK Terakhir</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="ipk" value="2.6" name="ipk">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="pilihan-beasiswa" class="col-sm-3 col-form-label text-nowrap">Pilihan Beasiswa</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="pilihan-beasiswa" name="pilihan-beasiswa">
+                <option value="Beasiswa Akademik">Beasiswa Akademik</option>
+                <option value="Beasiswa Non Akademik">Beasiswa Non Akademik</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Berkas Syarat</label>
+            <div class="col-sm-9">
+              <input type="file" class="form-control-file" id="syarat" name="syarat">
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary" id="btndaftar" name="submit">Daftar</button>
+            <a href="index.html" class="btn btn-secondary ">Batal</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Copyright &copy; Kampusku</p>
+  </footer>
+  <script>
+    aturPerilakuBerdasarkanIPK()
+  </script>
+
+  <!-- Bootstrap JS, jQuery, Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
